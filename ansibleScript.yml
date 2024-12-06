@@ -1,0 +1,21 @@
+---
+- name: Create file and add content
+  hosts: localhost
+  become: true  # If you need to run as root
+  tasks:
+    - name: Create the directory (mkdir equivalent)
+      file:
+        path: /home/dedsec/new
+        state: directory
+        mode: '0755'
+    
+    - name: Create the file (touch equivalent)
+      file:
+        path: /home/dedsec/new/hello_world.txt
+        state: touch
+    
+    - name: Add content to the file (cat equivalent)
+      copy:
+        dest: /home/dedsec/new/hello_world.txt
+        content: "Hi from Ansible\n"
+        mode: '0644'
