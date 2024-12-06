@@ -1,4 +1,5 @@
 #! /bin/bash
 mkdir /home/dedsec/jenkins_test
-toch /home/dedsec/jenkins_test/hello.txt
-echo "Hey " >> /home/dedsec/jenkins_test/hello.txt
+touch /home/dedsec/jenkins_test/hello.txt
+echo "Mail test " >> /home/dedsec/jenkins_test/hello.txt
+new
