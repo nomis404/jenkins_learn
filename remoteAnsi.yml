@@ -1,0 +1,21 @@
+---
+    - name: creating a file and adding content on it in a remote server
+      hosts: 172.17.0.3
+      become: true  # If you need to run as root
+      tasks:
+        - name: Create the directory (mkdir equivalent)
+          file:
+            path: /home/dedsec/new
+            state: directory
+            mode: '0755'
+        
+        - name: Create the file (touch equivalent)
+          file:
+            path: /home/dedsec/new/hello_world.txt
+            state: touch
+        
+        - name: Add content to the file (cat equivalent)
+          copy:
+            dest: /home/dedsec/new/hello_world.txt
+            content: "Hi from 172.17.0.2\n"
+            mode: '0644'
