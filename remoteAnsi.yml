@@ -1,7 +1,6 @@
 ---
     - name: creating a file and adding content on it in a remote server
-      hosts:
-        - 172.17.0.3
+      hosts: 172.17.0.3
       become: true  # If you need to run as root
       tasks:
         - name: Create the directory (mkdir equivalent)
