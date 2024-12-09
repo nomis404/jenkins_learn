@@ -17,5 +17,5 @@
     - name: Add content to the file (cat equivalent)
       copy:
         dest: /home/dedsec/new/hello_world.txt
-        content: "Hi from Ansible\n"
+        content: "Hi from Ansible from Pipeline 1\n"
         mode: '0644'
